@@ -25,3 +25,9 @@ app.get('/comments/:id', (req, res) => {
 app.post('/comments', (req, res) => {
     const comment = {
         id: comments.length + 1,
+        author: req.body.author,
+        text: req.body.text
+    };
+    comments.push(comment);
+    res.send(comment);
+});
